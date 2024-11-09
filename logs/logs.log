@@ -6592,3 +6592,39 @@ FROM (
     HAVING COUNT(*) > %s
 ) AS ignored_users;
 
+11-09-2024 16:41:07 | dbManager | INFO | Succeeded to connect to PostgreSQL database
+11-09-2024 16:41:07 | dbManager | DEBUG | check_for_database_content is called
+11-09-2024 16:41:07 | dbManager | DEBUG | get_all_tables is called
+11-09-2024 16:41:07 | dbManager | DEBUG | executing SQL query: SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema');
+11-09-2024 16:41:07 | dbManager | DEBUG | Table names retrieved: [('user',), ('user_ids',)]
+11-09-2024 16:41:07 | dbManager | DEBUG | Database already initialized.
+11-09-2024 16:41:24 | dbManager | INFO | Succeeded to connect to PostgreSQL database
+11-09-2024 16:41:24 | dbManager | DEBUG | check_for_database_content is called
+11-09-2024 16:41:24 | dbManager | DEBUG | get_all_tables is called
+11-09-2024 16:41:24 | dbManager | DEBUG | executing SQL query: SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema');
+11-09-2024 16:41:24 | dbManager | DEBUG | Table names retrieved: [('user',), ('user_ids',)]
+11-09-2024 16:41:24 | dbManager | DEBUG | Database already initialized.
+11-09-2024 16:41:42 | dbManager | INFO | Succeeded to connect to PostgreSQL database
+11-09-2024 16:41:42 | dbManager | DEBUG | check_for_database_content is called
+11-09-2024 16:41:42 | dbManager | DEBUG | get_all_tables is called
+11-09-2024 16:41:42 | dbManager | DEBUG | executing SQL query: SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema');
+11-09-2024 16:41:42 | dbManager | DEBUG | Table names retrieved: [('user',), ('user_ids',)]
+11-09-2024 16:41:42 | dbManager | DEBUG | Database already initialized.
+11-09-2024 16:41:50 | dbManager | INFO | Succeeded to connect to PostgreSQL database
+11-09-2024 16:41:50 | dbManager | DEBUG | check_for_database_content is called
+11-09-2024 16:41:50 | dbManager | DEBUG | get_all_tables is called
+11-09-2024 16:41:50 | dbManager | DEBUG | executing SQL query: SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema');
+11-09-2024 16:41:50 | dbManager | DEBUG | Table names retrieved: [('user',), ('user_ids',)]
+11-09-2024 16:41:50 | dbManager | DEBUG | Database already initialized.
+11-09-2024 16:41:54 | dbManager | INFO | Succeeded to connect to PostgreSQL database
+11-09-2024 16:41:54 | dbManager | DEBUG | check_for_database_content is called
+11-09-2024 16:41:54 | dbManager | DEBUG | get_all_tables is called
+11-09-2024 16:41:54 | dbManager | DEBUG | executing SQL query: SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema');
+11-09-2024 16:41:54 | dbManager | DEBUG | Table names retrieved: [('user',), ('user_ids',)]
+11-09-2024 16:41:54 | dbManager | DEBUG | Database already initialized.
+11-09-2024 16:42:01 | dbManager | INFO | Succeeded to connect to PostgreSQL database
+11-09-2024 16:42:01 | dbManager | DEBUG | check_for_database_content is called
+11-09-2024 16:42:01 | dbManager | DEBUG | get_all_tables is called
+11-09-2024 16:42:01 | dbManager | DEBUG | executing SQL query: SELECT tablename FROM pg_catalog.pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema');
+11-09-2024 16:42:01 | dbManager | DEBUG | Table names retrieved: [('user',), ('user_ids',)]
+11-09-2024 16:42:01 | dbManager | DEBUG | Database already initialized.

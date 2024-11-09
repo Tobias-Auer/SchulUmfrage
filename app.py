@@ -47,7 +47,7 @@ def view():
 @app.route("/data")
 def get_data():
     count = request.args.get('count', default=999, type=int)
-    data = db.view_all2(count)
+    data = db.view_all(count)
     votes = db.getStudentCount(count)
     votesTotal = db.getTotalVotes(count)
     maxStudentCount = db.getMostFrequentStudentCount(count)

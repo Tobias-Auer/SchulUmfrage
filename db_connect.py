@@ -1,7 +1,6 @@
 import os
 import psycopg2
 
-import Logger
 
 HOST = "192.168.2.213" 
 #HOST = "127.0.0.1" 
@@ -37,42 +36,27 @@ class dbManager:
             self.init_database()
             
     def init_database(self):
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        self.logger.error("Database initialization aborted")
-        # self.logger.debug("init_database is called")
-        # self.logger.info("Initializing database...")
-        # query = "DROP SCHEMA public CASCADE;CREATE SCHEMA public;"
-        # self.logger.debug(f"executing SQL query: {query}")
-        # self.cursor.execute(query)
-        # self.logger.warn("Database dropped")
-        # self.conn.commit()
+        self.logger.debug("init_database is called")
+        self.logger.info("Initializing database...")
+        query = "DROP SCHEMA public CASCADE;CREATE SCHEMA public;"
+        self.logger.debug(f"executing SQL query: {query}")
+        self.cursor.execute(query)
+        self.logger.warn("Database dropped")
+        self.conn.commit()
         
-        # current_dir = os.path.dirname(os.path.abspath(__file__))
-        # filepath = os.path.join(current_dir, "sql", "init.sql")
-        # query = read_file(filepath)
-        # self.logger.debug(f"executing SQL query: {query}")
-        # try:
-        #     self.cursor.execute(query)
-        #     self.conn.commit()
-        #     self.logger.info("Tables initiated successfully")
-        #     self.populate_database()
-        # except Exception as e:
-        #     self.logger.error(f"Error creating tables: {e}")
-        #     self.conn.rollback()
-        #     return False
-        return True
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        filepath = os.path.join(current_dir, "sql", "init.sql")
+        query = read_file(filepath)
+        self.logger.debug(f"executing SQL query: {query}")
+        try:
+            self.cursor.execute(query)
+            self.conn.commit()
+            self.logger.info("Tables initiated successfully")
+            self.populate_database()
+        except Exception as e:
+            self.logger.error(f"Error creating tables: {e}")
+            self.conn.rollback()
+            return False
     def get_all_tables(self):
         """
         Retrieves all table names from the connected database.
@@ -159,25 +143,8 @@ class dbManager:
             self.logger.error(f"Error retrieving entries for user_id {user_id}: {e}")
             return None
     
-    def view_all(self): # beta
-        self.logger.debug("view_all is called")
-        query = """
-                SELECT assigned_id, COUNT(*) AS frequency
-                FROM user_ids
-                GROUP BY assigned_id
-                ORDER BY frequency DESC;
-                """    
-        self.logger.debug(f"executing SQL query: {query}")
-        try:
-            self.cursor.execute(query)
-            entries = self.cursor.fetchall()
-            self.logger.info(f"Retrieved entries: {entries}")
-            return entries
-        except Exception as e:
-            self.logger.error(f"Error retrieving entries: {e}")
-            return None
-        
-    def view_all2(self, max_frequency=None):  # max_frequency is an optional parameter
+
+    def view_all(self, max_frequency=None):  # max_frequency is an optional parameter
         self.logger.debug("view_all is called with max_frequency=%s", max_frequency)
         
         # Base query
@@ -209,14 +176,14 @@ class dbManager:
     
     def getTotalVotes(self, max_frequency=None):
         query = """SELECT COUNT(*)
-FROM user_ids
-WHERE user_id IN (
-    SELECT user_id
-    FROM user_ids
-    GROUP BY user_id
-    HAVING COUNT(*) <= %s
-);
-"""
+                    FROM user_ids
+                    WHERE user_id IN (
+                        SELECT user_id
+                        FROM user_ids
+                        GROUP BY user_id
+                        HAVING COUNT(*) <= %s
+                    );
+                    """
         self.logger.debug(f"executing SQL query: {query}")
         try:
             self.cursor.execute(query, (max_frequency if max_frequency else 999,))
@@ -229,14 +196,14 @@ WHERE user_id IN (
         
     def getStudentCount(self, max_frequency=None):
         query = """SELECT COUNT(DISTINCT user_id)
-FROM user_ids
-WHERE user_id IN (
-    SELECT user_id
-    FROM user_ids
-    GROUP BY user_id
-    HAVING COUNT(*) <= %s
-);
-"""
+                    FROM user_ids
+                    WHERE user_id IN (
+                        SELECT user_id
+                        FROM user_ids
+                        GROUP BY user_id
+                        HAVING COUNT(*) <= %s
+                    );
+                    """
         self.logger.debug(f"executing SQL query: {query}")
         try:
             self.cursor.execute(query, (max_frequency if max_frequency else 999,))
@@ -250,16 +217,16 @@ WHERE user_id IN (
     def getMostFrequentStudentCount(self, max_frequency=None):
         query = """
             SELECT user_id, COUNT(*) AS frequency
-FROM user_ids
-WHERE user_id IN (
-    SELECT user_id
-    FROM user_ids
-    GROUP BY user_id
-    HAVING COUNT(*) <= %s
-)
-GROUP BY user_id
-ORDER BY frequency DESC
-LIMIT 1;
+            FROM user_ids
+            WHERE user_id IN (
+                SELECT user_id
+                FROM user_ids
+                GROUP BY user_id
+                HAVING COUNT(*) <= %s
+            )
+            GROUP BY user_id
+            ORDER BY frequency DESC
+            LIMIT 1;
 
         """
         self.logger.debug(f"Executing SQL query: {query}")
@@ -275,13 +242,13 @@ LIMIT 1;
 
     def getIgnoredStudents(self, max_frequency):
         query = """SELECT COUNT(*) AS ignored_users_count
-FROM (
-    SELECT user_id
-    FROM user_ids
-    GROUP BY user_id
-    HAVING COUNT(*) > %s
-) AS ignored_users;
-"""
+                    FROM (
+                        SELECT user_id
+                        FROM user_ids
+                        GROUP BY user_id
+                        HAVING COUNT(*) > %s
+                    ) AS ignored_users;
+                    """
         self.logger.debug(f"Executing SQL query: {query}")
         try:
             self.cursor.execute(query, (max_frequency if max_frequency else 999,))
