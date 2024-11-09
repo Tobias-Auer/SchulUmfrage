@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map with Inline Styles</title>
+</head>
+<body style="background-color: grey;">
+   <div id="mapBg" style="width: fit-content;">
+
+      <div id="grundriss" style="position: relative; height: auto;">
+          <div id="grundrissBildContainer" style="display: flex; justify-content: center; align-items: center;">
+              <img id="grundrissBild" src="https://t-auer.com/go.jpg" alt="Grundriss" style="width: 100%;border: solid 2px red;">
+  
+              <!-- Inline styles for each clickable area -->
+              <a onclick="clicked('aula')" style="position: absolute; background-color: rgba(0, 255, 115, 0.5); transition: background-color 0.3s ease; top: 43.53%; left: 77.92%; width: 19.64%; height: 28.54%;" onmouseover="this.style.backgroundColor='rgba(0, 255, 21, 0.8)';" onmouseout="this.style.backgroundColor='rgba(0, 255, 115, 0.5)';">Aula</a>
+  
+              <a onclick="clicked('schulhof1')" style="position: absolute; background-color: rgba(0, 174, 255, 0.5); transition: background-color 0.3s ease; top: 37.17%; left: 52.97%; width: 23.78%; height: 37.58%;" onmouseover="this.style.backgroundColor='rgba(0, 119, 255, 0.692)';" onmouseout="this.style.backgroundColor='rgba(0, 174, 255, 0.5)';">Großer Schulhof</a>
+  
+              <a onclick="clicked('verwaltung')" style="position: absolute; background-color: rgba(0, 255, 115, 0.5); transition: background-color 0.3s ease; top: 50.51%; left: 36.31%; width: 14.23%; height: 16.02%;" onmouseover="this.style.backgroundColor='rgba(0, 255, 21, 0.8)';" onmouseout="this.style.backgroundColor='rgba(0, 255, 115, 0.5)';">Verwaltung</a>
+  
+              <a onclick="clicked('sekretariat')" style="position: absolute; background-color: rgba(0, 255, 115, 0.5); transition: background-color 0.3s; top: 50.1%; left: 24.95%; width: 9.02%; height: 16.22%;" onmouseover="this.style.backgroundColor='rgba(0, 255, 21, 0.8)';" onmouseout="this.style.backgroundColor='rgba(0, 255, 115, 0.5)';">Sekretariat</a>
+  
+              <a onclick="clicked('gang1')" style="position: absolute; background-color: rgba(255, 0, 234, 0.5); transition: background-color 0.3s ease; top: 36.76%; left: 33.86%; width: 2.12%; height: 32.24%;" onmouseover="this.style.backgroundColor='rgba(255, 0, 255, 0.692)';" onmouseout="this.style.backgroundColor='rgba(255, 0, 234, 0.5)';">B-G Gang</a>
+  
+              <a onclick="clicked('fgebäude')" style="position: absolute; background-color: rgba(0, 255, 115, 0.5); transition: background-color 0.3s ease; top: 77.41%; left: 47.77%; width: 49.79%; height: 7.60%;" onmouseover="this.style.backgroundColor='rgba(0, 255, 21, 0.8)';" onmouseout="this.style.backgroundColor='rgba(0, 255, 115, 0.5)';">F-Gebäude</a>
+  
+              <a onclick="clicked('cgebäudelinks')" style="position: absolute; background-color: rgba(0, 255, 115, 0.5); transition: background-color 0.3s; top: 8.83%; left: 47.98%; width: 9.02%; height: 24.85%;" onmouseover="this.style.backgroundColor='rgba(0, 255, 21, 0.8)';" onmouseout="this.style.backgroundColor='rgba(0, 255, 115, 0.5)';">C-Gebäude Links</a>
+  
+              <a onclick="clicked('cgebäuderechts')" style="position: absolute; background-color: rgba(0, 255, 115, 0.5); transition: background-color 0.3s; top: 9.03%; left: 62.42%; width: 4.99%; height: 24.44%;" onmouseover="this.style.backgroundColor='rgba(0, 255, 21, 0.8)';" onmouseout="this.style.backgroundColor='rgba(0, 255, 115, 0.5)';">C-Gebäude Rechts</a>
+  
+              <a onclick="clicked('cgebäudemitte')" style="position: absolute; background-color: rgba(0, 255, 115, 0.5); transition: background-color 0.3s ease; top: 27.10%; left: 57.01%; width: 5.10%; height: 5.75%;" onmouseover="this.style.backgroundColor='rgba(0, 255, 21, 0.8)';" onmouseout="this.style.backgroundColor='rgba(0, 255, 115, 0.5)';">C-Gebäude Mitte</a>
+  
+              <a onclick="clicked('straße')" style="position: absolute; background-color: rgba(166, 255, 0, 0.5); transition: background-color 0.3s; top: 0%; left: 0%; width: 100%; height: 7.39%;" onmouseover="this.style.backgroundColor='rgba(229, 255, 0, 0.692)';" onmouseout="this.style.backgroundColor='rgba(166, 255, 0, 0.5)';">Straße</a>
+          </div>
+      </div>
+  
+      <div id="clicked"></div>
+  
+      <script>
+          function clicked(location) {
+              var p = document.createElement("p");
+              p.append(location)
+              document.getElementById("clicked").appendChild(p)
+          }
+      </script>
+  </div>
+</body>
+</html>

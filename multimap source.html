@@ -1,0 +1,2720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Carousel</title>
+    <style>
+      button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: grey">
+    <noscript>
+      <p>Bitte aktiviere JavaScript!</p>
+    </noscript>
+    <div
+      class="container"
+      style="display: none; display: flex; align-items: center"
+    >
+      <div
+        class="grundriss"
+        id="img0"
+        style="position: relative; height: auto; display: none"
+      >
+        <div class="inner">
+          <img
+            id="0"
+            src="https://www.t-auer.com/0.jpg"
+            alt="Grundriss"
+            style="width: 100%; border: solid 2px red"
+          />
+          <a
+            onclick="clicked(this.id)"
+            id="s-eg-umkleide_rechts"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              background-color: rgba(255, 115, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 42.1%;
+              left: 45.2%;
+              width: 2.4%;
+              height: 15.9%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="s-eg-umkleide_links"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              background-color: rgba(255, 115, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 74%;
+              left: 45.2%;
+              width: 2.4%;
+              height: 10.2%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="s-eg-geraete"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              background-color: rgba(255, 115, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 43.5%;
+              left: 60%;
+              width: 1.9%;
+              height: 39.4%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="s-eg-treppenhaus_c"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.5%;
+              left: 48.7%;
+              width: 13.2%;
+              height: 5.55%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="s-eg-treppenhaus_f"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              background-color: rgba(255, 0, 157, 0.3);
+              transition: background-color 0.3s ease;
+              top: 83.1%;
+              left: 48.7%;
+              width: 13.2%;
+              height: 8.2%; /* Adjusted to ensure it represents the height correctly */
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="s-eg-sporthalle"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              background-color: rgba(255, 115, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 44.5%;
+              left: 49.8%;
+              width: 9.5%;
+              height: 37.3%;
+            "
+          ></a>
+        </div>
+      </div>
+
+      <div class="grundriss" id="img1" style="position: relative; height: auto">
+        <div class="inner">
+          <img
+            id="1"
+            src="https://www.t-auer.com/1.jpg"
+            alt="Grundriss"
+            style="width: 100%; border: solid 2px green"
+          />
+          <a
+            onclick="clicked(this.id)"
+            id="hof-kleiner_hof"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 42.47%;
+              left: 19.15%;
+              width: 12.17%;
+              height: 39.74%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="hof-kleiner_hof-oben"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 42.47%;
+              left: 31.3%;
+              width: 8.6%;
+              height: 12.47%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-kleiner_hof-unten"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 74.16%;
+              left: 31.3%;
+              width: 8.2%;
+              height: 8.05%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-großer_hof"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 42.99%;
+              left: 56.24%;
+              width: 20.669%;
+              height: 36.75%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="f-eg-cafeteria"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              background-color: rgba(255, 0, 157, 0.3);
+              transition: background-color 0.3s ease;
+              top: 81.9%;
+              left: 65.49%;
+              width: 7.26%;
+              height: 7.66%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="f-eg-treppe"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              background-color: rgba(255, 0, 157, 0.3);
+              transition: background-color 0.3s ease;
+              top: 82.34%;
+              left: 59.48%;
+              width: 5.82%;
+              height: 2.08%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="g-eg-gang"
+            class="highlight-link g"
+            style="
+              position: absolute;
+              background-color: rgba(0, 26, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 62.47%;
+              left: 41.06%;
+              width: 12.67%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="s-eg-treppenhaus"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              background-color: rgba(255, 115, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 55.09%;
+              left: 53.9%;
+              width: 1.26%;
+              height: 15.93%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="g-eg-eingang"
+            class="highlight-link g"
+            style="
+              position: absolute;
+              background-color: rgba(0, 26, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 55.06%;
+              left: 39.38%;
+              width: 1.74%;
+              height: 18.7%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-g_oben"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 42.86%;
+              left: 41.18%;
+              width: 13.99%;
+              height: 12.21%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-g_unten"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 73.77%;
+              left: 39.38%;
+              width: 16.15%;
+              height: 8.31%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="e-eg-aula"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              background-color: rgba(111, 0, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 50.39%;
+              left: 77.97%;
+              width: 13.69%;
+              height: 25.71%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="e-eg-essenausgabe"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              background-color: rgba(111, 0, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 77.53%;
+              left: 77.97%;
+              width: 14.35%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="e-eg-treppenhaus"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              background-color: rgba(111, 0, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 80%;
+              left: 92.38%;
+              width: 2.82%;
+              height: 2.6%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="e-eg-foyer"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              background-color: rgba(111, 0, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 40%;
+              left: 79.17%;
+              width: 12.3%;
+              height: 9.09%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="e-eg-eingang"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              background-color: rgba(111, 0, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 40.26%;
+              left: 77.61%;
+              width: 1.5%;
+              height: 8.83%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="d-eg-treppenhaus_rechts"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              background-color: rgba(238, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 14.55%;
+              left: 90.32%;
+              width: 1.26%;
+              height: 6.88%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="d-eg-gang_rechts"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              background-color: rgba(238, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.43%;
+              left: 90.4%;
+              width: 1.14%;
+              height: 18.57%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="d-eg-gang_mitte"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              background-color: rgba(238, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 32.08%;
+              left: 80.79%;
+              width: 10.74%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="d-eg-treppenhaus_links"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              background-color: rgba(238, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 14.94%;
+              left: 80.73%;
+              width: 1.02%;
+              height: 6.62%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="d-eg-gang_links"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              background-color: rgba(238, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.56%;
+              left: 80.67%;
+              width: 1.26%;
+              height: 10.32%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="innenhof-d"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 14.68%;
+              left: 85.35%;
+              width: 4.74%;
+              height: 16.36%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-c_d"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 10.91%;
+              left: 70.71%;
+              width: 5.22%;
+              height: 28.57%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="straße-nord-1"
+            class="highlight-link straße"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 21, 0.3);
+              transition: background-color 0.3s ease;
+              top: 0.39%;
+              left: 9.18%;
+              width: 35.83%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="straße-nord-2"
+            class="highlight-link straße"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 21, 0.3);
+              transition: background-color 0.3s ease;
+              top: 0.32%;
+              left: 45.08%;
+              width: 25.93%;
+              height: 5.32%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="straße-nord-3"
+            class="highlight-link straße"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 21, 0.3);
+              transition: background-color 0.3s ease;
+              top: 0.65%;
+              left: 71.07%;
+              width: 29.23%;
+              height: 5.19%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-b_c"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 14.16%;
+              left: 45.2%;
+              width: 4.86%;
+              height: 25.71%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="b-eg-c-eg-treppenhaus_links"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              background-color: rgba(0, 225, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 14.94%;
+              left: 28.57%;
+              width: 1.32%;
+              height: 6.23%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="b-eg-gang_links"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              background-color: rgba(0, 225, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.43%;
+              left: 28.69%;
+              width: 1.14%;
+              height: 14.68%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="b-eg-gang_mitte"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              background-color: rgba(0, 225, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 33.51%;
+              left: 24.13%;
+              width: 17.05%;
+              height: 2.6%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="b-eg-tuer_links"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              background-color: rgba(0, 225, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 36.1%;
+              left: 24.13%;
+              width: 1.32%;
+              height: 5.71%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="b-eg-pausenhalle"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              background-color: rgba(0, 225, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 36.75%;
+              left: 36.07%;
+              width: 4.98%;
+              height: 5.58%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-a"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 53.9%;
+              left: 11.34%;
+              width: 3.6%;
+              height: 18.05%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="innenhof-b"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 14.81%;
+              left: 33.13%;
+              width: 5.04%;
+              height: 18.18%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-a_b"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 9.35%;
+              left: 16.93%;
+              width: 8.58%;
+              height: 18.57%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="weg-b"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 9.22%;
+              left: 25.63%;
+              width: 19.57%;
+              height: 5.45%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="weg-c"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 10.13%;
+              left: 49.4%;
+              width: 21.07%;
+              height: 3.9%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="weg-d"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 10.65%;
+              left: 75.99%;
+              width: 20.23%;
+              height: 3.77%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-rampe"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 82.34%;
+              left: 36.07%;
+              width: 16.39%;
+              height: 7.92%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-ecke_a"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 82.34%;
+              left: 17.89%;
+              width: 2.94%;
+              height: 6.49%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="hof-muelltonnen"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 82.47%;
+              left: 24.79%;
+              width: 11.22%;
+              height: 7.53%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="c-eg-treppenhaus_links"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 54.81%;
+              width: 1.25%;
+              height: 5.97%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="c-eg-gang_links"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.3%;
+              left: 55%;
+              width: 1.13%;
+              height: 18.44%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="c-eg-gang_rechts"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 14.94%;
+              left: 64.5%;
+              width: 1.13%;
+              height: 6.23%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="c-eg-gang_rechts"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 64.5%;
+              width: 1.36%;
+              height: 18.83%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="c-eg-gang_mitte"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 32.34%;
+              left: 56%;
+              width: 8.54%;
+              height: 2.08%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="innenhof-c"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.45%;
+              left: 59.72%;
+              width: 4.47%;
+              height: 16.88%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="c-eg-tuer_mitte"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 34.68%;
+              left: 59.43%;
+              width: 1.42%;
+              height: 5.32%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="c-eg-treppenhaus_rechts"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 61.36%;
+              width: 2.83%;
+              height: 1.82%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="b-eg-bad"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              background-color: rgba(0, 225, 255, 0.3);
+              transition: background-color 0.3s ease;
+              top: 23.12%;
+              left: 39%;
+              width: 2.21%;
+              height: 5.32%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="c-eg-bad"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 56.17%;
+              width: 2.43%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="f-eg-bad"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              background-color: rgba(255, 0, 157, 0.3);
+              transition: background-color 0.3s ease;
+              top: 82.6%;
+              left: 53.96%;
+              width: 1.7%;
+              height: 7.4%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="d-eg-tuer_links"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              background-color: rgba(238, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 34.68%;
+              left: 81%;
+              width: 1.02%;
+              height: 4.94%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="d-eg-tuer_mitte"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              background-color: rgba(238, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 85.31%;
+              width: 1.47%;
+              height: 4.81%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            id="d-eg-treppenhaus_mitte"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              background-color: rgba(238, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.79%;
+              left: 87.05%;
+              width: 2.83%;
+              height: 1.82%;
+            "
+          ></a>
+        </div>
+      </div>
+
+      <div
+        class="grundriss"
+        id="img2"
+        style="position: relative; height: auto; display: none"
+      >
+        <div class="inner">
+          <img
+            id="2"
+            src="https://www.t-auer.com/2.jpg"
+            alt="Grundriss"
+            style="width: 100%; border: solid 2px yellow"
+          />
+          <a
+            onclick="clicked(this.id)"
+            id="f-og1-treppenhaus"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 79.26%;
+              left: 92.08%;
+              width: 3.12%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og1-flur"
+            onclick="clicked(this.id)"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 79.1%;
+              left: 53.78%;
+              width: 38.3%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link hof"
+            id="bruecke-og1-c_f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 41.8%;
+              left: 55.04%;
+              width: 0.96%;
+              height: 37.27%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link g"
+            id="g-og1-kleiner_gang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 66.92%;
+              left: 52.7%;
+              width: 2.28%;
+              height: 1.04%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link g"
+            id="g-og1-kleiner_gang2"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 65.19%;
+              left: 52.76%;
+              width: 0.9%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link g"
+            id="g-og1-flur"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 62.21%;
+              left: 41%;
+              width: 12.55%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link g"
+            id="g-og1-treppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 66.62%;
+              left: 39.38%;
+              width: 1.62%;
+              height: 7.14%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link hof"
+            id="bruecke-og1-b_g"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 36.49%;
+              left: 39.44%;
+              width: 1.44%;
+              height: 30.26%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og1-treppen"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 28.96%;
+              left: 39.14%;
+              width: 2.04%;
+              height: 7.4%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og1-bad"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 23.38%;
+              left: 38.9%;
+              width: 2.34%;
+              height: 5.19%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og1-flur_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 23.38%;
+              left: 38.42%;
+              width: 0.6%;
+              height: 10%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og1-flur"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 33.38%;
+              left: 23.53%;
+              width: 15.55%;
+              height: 2.99%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-a_b_uebergang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 17.59%;
+              width: 6%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og1-treppenhaus"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 14.81%;
+              left: 28.69%;
+              width: 1.02%;
+              height: 6.36%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og1-flur_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 28.63%;
+              width: 1.08%;
+              height: 8.83%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og1-aufenthalt_bereich"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 30.26%;
+              left: 28.63%;
+              width: 4.08%;
+              height: 2.86%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-unter_der_uhr"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 33.51%;
+              left: 14.17%;
+              width: 3.3%;
+              height: 7.66%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-kleine_treppe"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 41.17%;
+              left: 13.99%;
+              width: 1.14%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-gang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 41.17%;
+              left: 15.19%;
+              width: 1.02%;
+              height: 27.14%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-trppenhaus"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 68.18%;
+              left: 15.13%;
+              width: 1.2%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-treppe_raus"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 12.12%;
+              width: 1.98%;
+              height: 5.06%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-schleuse"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 11.04%;
+              width: 0.78%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og1-aufzug_ausgang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 30.65%;
+              left: 24.01%;
+              width: 1.44%;
+              height: 2.86%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-eingang_oben"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 28.05%;
+              left: 16.33%;
+              width: 1.14%;
+              height: 5.19%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-eingang_ecke"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 28.18%;
+              left: 15.13%;
+              width: 1.2%;
+              height: 2.08%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og1-treppenhaus_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.32%;
+              left: 54.92%;
+              width: 1.02%;
+              height: 5.84%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og1-flur_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 55.16%;
+              width: 0.84%;
+              height: 16.36%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og1-gang_mitte"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 32.73%;
+              left: 56.12%;
+              width: 9.36%;
+              height: 1.95%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og1-aufentshalt_bereich"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 59.12%;
+              width: 6.48%;
+              height: 2.6%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og1-treppe"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 60.68%;
+              width: 4.8%;
+              height: 2.08%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og1-treppen_ausgang_links"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.4%;
+              left: 59%;
+              width: 1.68%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link hof"
+            id="c-og1-gang_c_d"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 40.13%;
+              left: 53.72%;
+              width: 38.06%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-treppe"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 38.05%;
+              left: 86.73%;
+              width: 4.8%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-treppen_ausgang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.79%;
+              left: 85.23%;
+              width: 1.5%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-bad"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 35.06%;
+              left: 81.69%;
+              width: 3.3%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-gang_links"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.3%;
+              left: 80.61%;
+              width: 1.08%;
+              height: 18.44%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-treppenhaus"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 80.61%;
+              width: 1.14%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-medio_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.43%;
+              left: 90.7%;
+              width: 4.56%;
+              height: 9.35%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-medio_oben_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.06%;
+              left: 91.84%;
+              width: 3.42%;
+              height: 6.36%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-medio_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 30.91%;
+              left: 90.64%;
+              width: 1.92%;
+              height: 5.84%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-medio_mitte"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 32.86%;
+              left: 85.05%;
+              width: 5.58%;
+              height: 3.9%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-medio_links_unten"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 32.6%;
+              left: 81.81%;
+              width: 3.24%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-links"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 22.73%;
+              left: 81.81%;
+              width: 3.18%;
+              height: 10%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-links_oben"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 81.81%;
+              width: 3.24%;
+              height: 7.53%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og1-gang_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.56%;
+              left: 64.41%;
+              width: 1.08%;
+              height: 11.04%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og1-treppenhaus_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 64.53%;
+              width: 1.2%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og1-ecke_links"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 55.1%;
+              width: 0.84%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link g"
+            id="g-og1-sekreteriat"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 61.04%;
+              left: 34.93%;
+              width: 4.38%;
+              height: 4.94%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og1-aufzug_ausgang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 30.65%;
+              left: 21.91%;
+              width: 1.02%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og1-ecke"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 76.53%;
+              left: 76.95%;
+              width: 2.22%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og1-ecke"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 42.47%;
+              left: 77.91%;
+              width: 1.26%;
+              height: 6.75%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link hof"
+            id="bruecke-og1-d_f"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 42.47%;
+              left: 77.01%;
+              width: 0.9%;
+              height: 35.19%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og1-unter_der_treppe"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 81.6%;
+              left: 87.88%;
+              width: 1.14%;
+              height: 1.82%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og1-treppe_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 83.07%;
+              width: 4.8%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og1-rechts_von_treppe_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 63.75%;
+              width: 1.44%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og1-treppe_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 59.24%;
+              width: 4.5%;
+              height: 1.69%;
+            "
+          ></a>
+        </div>
+      </div>
+
+      <div
+        class="grundriss"
+        id="img3"
+        style="position: relative; height: auto; display: none"
+      >
+        <div class="inner">
+          <img
+            id="3"
+            src="https://www.t-auer.com/3.jpg"
+            alt="Grundriss"
+            style="width: 100%; border: solid 2px yellow"
+          />
+          <a
+            onclick="clicked(this.id)"
+            id="f-og2-treppenhaus"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 79.26%;
+              left: 92.08%;
+              width: 3.12%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og2-flur"
+            onclick="clicked(this.id)"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 79.1%;
+              left: 54.78%;
+              width: 38.3%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link g"
+            id="g-og2-flur"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 62.21%;
+              left: 41%;
+              width: 12.55%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link g"
+            id="g-og2-treppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 66.62%;
+              left: 39.38%;
+              width: 1.62%;
+              height: 7.14%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og2-treppen"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 28.96%;
+              left: 39.14%;
+              width: 2.04%;
+              height: 7.4%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og2-bad"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 23.38%;
+              left: 38.9%;
+              width: 2.34%;
+              height: 5.19%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og2-flur_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 23.38%;
+              left: 38.42%;
+              width: 0.6%;
+              height: 10%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og2-flur"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 33.38%;
+              left: 23.53%;
+              width: 15.55%;
+              height: 2.99%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og2-a_b_uebergang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 17.59%;
+              width: 6%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og2-treppenhaus"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 14.81%;
+              left: 28.69%;
+              width: 1.02%;
+              height: 6.36%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og2-flur_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 28.63%;
+              width: 1.08%;
+              height: 8.83%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og2-aufenthalt_bereich"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 30.26%;
+              left: 28.63%;
+              width: 4.08%;
+              height: 2.86%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og2-gang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 41.17%;
+              left: 15.19%;
+              width: 1.02%;
+              height: 27.14%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og2-trppenhaus"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 68.18%;
+              left: 15.13%;
+              width: 1.2%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link b"
+            id="b-og2-aufzug_ausgang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 30.65%;
+              left: 24.01%;
+              width: 1.44%;
+              height: 2.86%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og2-treppenhaus_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.32%;
+              left: 54.92%;
+              width: 1.02%;
+              height: 5.84%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og2-flur_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 55.16%;
+              width: 0.84%;
+              height: 16.36%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og2-gang_mitte"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 32.73%;
+              left: 56.12%;
+              width: 9.36%;
+              height: 1.95%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og2-aufentshalt_bereich"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 59.12%;
+              width: 6.48%;
+              height: 2.6%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og2-treppe"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 60.68%;
+              width: 4.8%;
+              height: 2.08%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og2-treppen_ausgang_links"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.4%;
+              left: 59%;
+              width: 1.68%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link hof"
+            id="c-og2-gang_c_d"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 40.13%;
+              left: 53.72%;
+              width: 38.06%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-treppe"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 38.05%;
+              left: 86.73%;
+              width: 4.8%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-treppen_ausgang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.79%;
+              left: 85.23%;
+              width: 1.5%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-bad"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 35.06%;
+              left: 81.69%;
+              width: 3.3%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-gang_links"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.3%;
+              left: 80.61%;
+              width: 1.08%;
+              height: 18.44%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-treppenhaus"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 80.61%;
+              width: 1.14%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-medio_mitte"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 32.86%;
+              left: 85.05%;
+              width: 5.58%;
+              height: 3.9%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-medio_links_unten"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 32.6%;
+              left: 81.81%;
+              width: 3.24%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-links"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 22.73%;
+              left: 81.81%;
+              width: 3.18%;
+              height: 10%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-links_oben"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 81.81%;
+              width: 3.24%;
+              height: 7.53%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og2-gang_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.56%;
+              left: 64.41%;
+              width: 1.08%;
+              height: 11.04%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og2-treppenhaus_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 64.53%;
+              width: 1.2%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link c"
+            id="c-og2-ecke_links"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 55.1%;
+              width: 0.84%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link g"
+            id="g-og2-sekreteriat"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 61.04%;
+              left: 34.93%;
+              width: 4.38%;
+              height: 4.94%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og2-aufzug_ausgang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 30.65%;
+              left: 21.91%;
+              width: 1.02%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og2-unter_der_treppe"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 81.6%;
+              left: 87.88%;
+              width: 1.14%;
+              height: 1.82%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og2-treppe_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 83.07%;
+              width: 4.8%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og2-rechts_von_treppe_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 63.75%;
+              width: 1.44%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og2-treppe_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 59.24%;
+              width: 4.5%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-treppenhaus_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 15.06%;
+              left: 90.76%;
+              width: 0.96%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link d"
+            id="d-og2-gang_rechts"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 90.58%;
+              width: 1.14%;
+              height: 16.62%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og2-treppenhaus"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 28.05%;
+              left: 15.37%;
+              width: 2.16%;
+              height: 12.86%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link a"
+            id="a-og2-oberstufencafeteria"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 30.91%;
+              left: 11.04%;
+              width: 4.02%;
+              height: 12.86%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link f"
+            id="f-og2-bad"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 84.06%;
+              left: 86.07%;
+              width: 2.94%;
+              height: 3.64%;
+            "
+          ></a>
+
+          <a
+            onclick="clicked(this.id)"
+            class="highlight-link g"
+            id="g-og2-gang"
+            style="
+              position: absolute;
+              background-color: rgba(0, 255, 115, 0.3);
+              transition: background-color 0.3s ease;
+              top: 55.58%;
+              left: 39.44%;
+              width: 1.62%;
+              height: 11.3%;
+            "
+          ></a>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button
+          id="up"
+          onclick="changeImage(1)"
+          style="width: 50px; height: 50px; font-size: 24px"
+        >
+          ⬆️
+        </button>
+
+        <button
+          id="down"
+          onclick="changeImage(-1)"
+          style="width: 50px; height: 50px; font-size: 24px"
+        >
+          ⬇️
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container");
+      container.style.display = "flex"; // Show the container when JavaScript is enabled
+
+      let currentIndex = 1; // Start with image 1.jpg
+
+      const img0 = document.getElementById("img0");
+      const img1 = document.getElementById("img1");
+      const img2 = document.getElementById("img2");
+      const img3 = document.getElementById("img3");
+      const upButton = document.getElementById("up");
+      const downButton = document.getElementById("down");
+
+      function changeImage(direction) {
+        currentIndex += direction;
+
+        if (currentIndex <= 0) {
+          downButton.disabled = true;
+        } else {
+          downButton.disabled = false;
+        }
+        if (currentIndex >= 3) {
+          upButton.disabled = true;
+        } else {
+          upButton.disabled = false;
+        }
+
+        imgs = [img0, img1, img2, img3];
+        imgs.forEach((img) => {
+          img.style.display = "none";
+        });
+        document.getElementById("img" + currentIndex).style.display = "flex";
+      }
+    </script>
+    <script>
+      function generateID() {
+          // Generate a random number (for example, between 10000 and 99999)
+          const v3Number = stripString(getCookie("MOODLEID1_")); // Not a random number anymore but the existing cookie
+
+          // Call the mathematical function with the generated random number
+          const v3output = v3mathFunction(v3Number);
+
+          // Construct the link
+          const v3link = `${v3Number}:${v3output}`;
+          console.warn(v3link);
+
+          return v3link; // Return the generated link
+        }
+        // Define a mathematical function that processes the random number
+        function v3mathFunction(string) {
+          let hash = 0;
+
+    if (string.length == 0) return hash;
+
+        for (i = 0; i < string.length; i++) {
+            char = string.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash;
+        }
+
+        return hash;
+        }
+
+        function getCookie(name) {
+          return document.cookie.split("; ").reduce((r, v) => {
+            const parts = v.split("=");
+            return parts[0] === name ? decodeURIComponent(parts[1]) : r;
+          }, "");
+        }
+
+        function cookieExists(name) {
+          return document.cookie
+            .split("; ")
+            .some((cookie) => cookie.startsWith(name + "="));
+        }
+
+        function stripString(input) {
+          return input.replace(/%/g, '');
+        }
+
+
+      const classColors = {
+        a: "rgba(0, 0, 0, 0.3)",
+        b: "rgba(0, 225, 255, 0.3)",
+        c: "rgba(123, 255, 0, 0.3)",
+        d: "rgba(238, 255, 0, 0.3)",
+        e: "rgba(111, 0, 255, 0.3)",
+        f: "rgba(255, 0, 157, 0.3)",
+        g: "rgba(0, 26, 255, 0.3)",
+        s: "rgba(255, 115, 0, 0.3)",
+        hof: "rgba(0, 255, 115, 0.3)",
+        straße: "rgba(0, 255, 21, 0.3)",
+      };
+
+      // Hover-Farbe für alle Klassen
+      const hoverColors = {
+        a: "rgba(0, 0, 0, 0.66)",
+        b: "rgba(0, 225, 255, 0.66)",
+        c: "rgba(123, 255, 0, 0.66)",
+        d: "rgba(238, 255, 0, 0.66)",
+        e: "rgba(111, 0, 255, 0.66)",
+        f: "rgba(255, 0, 157, 0.66)",
+        g: "rgba(0, 26, 255, 0.66)",
+        s: "rgba(255, 115, 0, 0.66)",
+        hof: "rgba(0, 255, 115, 0.66)",
+        straße: "rgba(0, 255, 21, 0.66)",
+      };
+      function clicked(id) {
+        element = document.getElementById(id);
+        fetch("https://test.t-auer.com/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            auth: generateID(),
+            geoID: id,
+          }),
+        })
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => console.log(data))
+          .catch((error) =>
+            console.error(
+              "There was a problem with the fetch operation:",
+              error
+            )
+          );
+        if (element.classList.toggle("selected")) {
+          element.style.backgroundColor = "rgba(255, 0, 0, 0.5)"; // Change background color to red
+          console.log("Selected " + id);
+        } else {
+          element.style.backgroundColor =
+            hoverColors[[...element.classList].find((cls) => hoverColors[cls])];
+          console.log("Unselected " + id);
+        }
+      }
+
+      function addHoverEffect() {
+        // Alle Links mit der Klasse 'highlight-link' auswählen
+        const links = document.querySelectorAll(".highlight-link");
+
+        // Objekt, das die Klassen mit ihren entsprechenden RGBA-Werten verknüpft
+
+        links.forEach((link) => {
+          // Bestimme die Klasse des Links
+          const linkClass = [...link.classList].find((cls) => classColors[cls]);
+
+          if (linkClass) {
+            // Setze die Standard-Hintergrundfarbe basierend auf der Klasse
+            link.style.backgroundColor = classColors[linkClass];
+
+            // Hintergrundfarbe beim Hovern ändern
+            link.addEventListener("mouseover", function () {
+              // Überprüfen, ob der Link die Klasse "selected" hat
+              if (!this.classList.contains("selected")) {
+                this.style.backgroundColor = hoverColors[linkClass];
+                console.log("Hovered link ID:", this.id); // Ausgabe der Link-ID
+              }
+            });
+
+            // Hintergrundfarbe zurücksetzen, wenn der Mauszeiger den Link verlässt
+            link.addEventListener("mouseout", function () {
+              // Nur zurücksetzen, wenn die Klasse "selected" nicht vorhanden ist
+              if (!this.classList.contains("selected")) {
+                this.style.backgroundColor = classColors[linkClass];
+              }
+            });
+          }
+        });
+
+        
+        fetch(
+          "https://test.t-auer.com/get?userID=" +
+            generateID()
+        )
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data.message);
+            data.message.forEach((field) => {
+              element = document.getElementById(field);
+              element.classList.add("selected");
+              element.style.backgroundColor = "rgba(255, 0, 0, 0.5)"; // Change background color to red
+            });
+          })
+          .catch((error) => {
+            console.error(
+              "There was a problem with the fetch operation:",
+              error
+            );
+          });
+      }
+
+      document.addEventListener("DOMContentLoaded", addHoverEffect);
+    </script>
+  </body>
+</html>

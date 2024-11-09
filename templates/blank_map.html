@@ -1,0 +1,2404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Data</title>
+  </head>
+  <body>
+    <div>
+      <Button onclick="window.location.href = '/data'">Unbegrenzt</Button>
+      <button onclick="redirectWithCount(30)">maximal 30 Stimmen</button>
+      <button onclick="redirectWithCount(20)">maximal 20 Stimmen</button>
+      <button onclick="redirectWithCount(15)">maximal 15 Stimmen</button>
+      <button onclick="redirectWithCount(10)">maximal 10 Stimmen</button>
+      <button onclick="redirectWithCount(5)">maximal 5 Stimmen</button>
+      <button onclick="redirectWithCount(1)">maximal 1 Stimme</button>
+
+      <p>Es werde nur Werte von Schülern angezeigt, die maximal <strong>{{ currentMaxCount }}</strong> Stellen markiert haben</p>
+      <p>Es werden daher <strong>{{ ignoredVotes }}</strong> Schüler von den Daten ausgeblendet</p>
+  
+      <script>
+          function redirectWithCount(count) {
+              window.location.href = `/data?count=${count}`;
+          }
+      </script>
+    </div>
+
+    <div style="margin-bottom: 30px;">
+      <button onclick="downloadWorkbook()">Download data as Excel</button>
+    </div>
+    <div
+      class="container"
+      style="display: none; display: flex; align-items: center"
+    >
+      <div
+        class="grundriss"
+        id="img0"
+        style="position: relative; height: auto; display: none"
+      >
+        <div class="inner">
+          <img
+            id="0"
+            src="https://www.t-auer.com/0.jpg"
+            alt="Grundriss"
+            style="width: 100%; border: solid 2px red"
+          />
+          <a
+            id="s-eg-umkleide_rechts"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 42.1%;
+              left: 45.2%;
+              width: 2.4%;
+              height: 15.9%;
+            "
+          ></a>
+          <a
+            id="s-eg-umkleide_links"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 74%;
+              left: 45.2%;
+              width: 2.4%;
+              height: 10.2%;
+            "
+          ></a>
+          <a
+            id="s-eg-geraete"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 43.5%;
+              left: 60%;
+              width: 1.9%;
+              height: 39.4%;
+            "
+          ></a>
+          <a
+            id="s-eg-treppenhaus_c"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.5%;
+              left: 48.7%;
+              width: 13.2%;
+              height: 5.55%;
+            "
+          ></a>
+          <a
+            id="s-eg-treppenhaus_f"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 83.1%;
+              left: 48.7%;
+              width: 13.2%;
+              height: 8.2%; /* Adjusted to ensure it represents the height correctly */
+            "
+          ></a>
+          <a
+            id="s-eg-sporthalle"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 44.5%;
+              left: 49.8%;
+              width: 9.5%;
+              height: 37.3%;
+            "
+          ></a>
+        </div>
+      </div>
+
+      <div class="grundriss" id="img1" style="position: relative; height: auto">
+        <div class="inner">
+          <img
+            id="1"
+            src="https://www.t-auer.com/1.jpg"
+            alt="Grundriss"
+            style="width: 100%; border: solid 2px green"
+          />
+          <a
+            id="a-eg-bad"
+            class="highlight-link a"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 19.21%;
+              width: 4.56%;
+              height: 8.18%;
+            "
+          ></a>
+
+          <a
+            id="a-og1-eingang_oben"
+            class="highlight-link a"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 28.18%;
+              left: 16.57%;
+              width: 0.84%;
+              height: 4.29%;
+            "
+          ></a>
+
+          <a
+            id="a-og1-eingang_ecke"
+            class="highlight-link a"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 28.31%;
+              left: 15.25%;
+              width: 1.2%;
+              height: 3.9%;
+            "
+          ></a>
+
+          <a
+            id="a-eg-ausgang"
+            class="highlight-link a"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 11.04%;
+              width: 2.04%;
+              height: 4.94%;
+            "
+          ></a>
+
+          <a
+            id="a-eg-turnhalle_umkleide_unten"
+            class="highlight-link a"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 27.92%;
+              left: 13.99%;
+              width: 1.08%;
+              height: 5.45%;
+            "
+          ></a>
+
+          <a
+            id="a-eg-turnhalle_umkleide_oben"
+            class="highlight-link a"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.03%;
+              left: 13.99%;
+              width: 2.88%;
+              height: 8.05%;
+            "
+          ></a>
+
+          <a
+            id="a-eg-turnhalle"
+            class="highlight-link a"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.03%;
+              left: 10.26%;
+              width: 3.54%;
+              height: 19.48%;
+            "
+          ></a>
+          <a
+            id="hof-kleiner_hof"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 42.47%;
+              left: 19.15%;
+              width: 12.17%;
+              height: 39.74%;
+            "
+          ></a>
+          <a
+            id="hof-kleiner_hof-oben"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 42.47%;
+              left: 31.3%;
+              width: 8.6%;
+              height: 12.47%;
+            "
+          ></a>
+
+          <a
+            id="hof-kleiner_hof-unten"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 74.16%;
+              left: 31.3%;
+              width: 8.2%;
+              height: 8.05%;
+            "
+          ></a>
+
+          <a
+            id="hof-großer_hof"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 42.99%;
+              left: 56.24%;
+              width: 20.669%;
+              height: 36.75%;
+            "
+          ></a>
+
+          <a
+            id="f-eg-cafeteria"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 81.9%;
+              left: 65.49%;
+              width: 7.26%;
+              height: 7.66%;
+            "
+          ></a>
+
+          <a
+            id="f-eg-treppe"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 82.34%;
+              left: 59.48%;
+              width: 5.82%;
+              height: 2.08%;
+            "
+          ></a>
+
+          <a
+            id="g-eg-gang"
+            class="highlight-link g"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 62.47%;
+              left: 41.06%;
+              width: 12.67%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            id="s-eg-treppenhaus"
+            class="highlight-link s"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 55.09%;
+              left: 53.9%;
+              width: 1.26%;
+              height: 15.93%;
+            "
+          ></a>
+
+          <a
+            id="g-eg-eingang"
+            class="highlight-link g"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 55.06%;
+              left: 39.38%;
+              width: 1.74%;
+              height: 18.7%;
+            "
+          ></a>
+
+          <a
+            id="hof-g_oben"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 42.86%;
+              left: 41.18%;
+              width: 13.99%;
+              height: 12.21%;
+            "
+          ></a>
+
+          <a
+            id="hof-g_unten"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 73.77%;
+              left: 39.38%;
+              width: 16.15%;
+              height: 8.31%;
+            "
+          ></a>
+
+          <a
+            id="e-eg-aula"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 50.39%;
+              left: 77.97%;
+              width: 13.69%;
+              height: 25.71%;
+            "
+          ></a>
+
+          <a
+            id="e-eg-essenausgabe"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 77.53%;
+              left: 77.97%;
+              width: 14.35%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            id="e-eg-treppenhaus"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 80%;
+              left: 92.38%;
+              width: 2.82%;
+              height: 2.6%;
+            "
+          ></a>
+
+          <a
+            id="e-eg-foyer"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 40%;
+              left: 79.17%;
+              width: 12.3%;
+              height: 9.09%;
+            "
+          ></a>
+
+          <a
+            id="e-eg-eingang"
+            class="highlight-link e"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 40.26%;
+              left: 77.61%;
+              width: 1.5%;
+              height: 8.83%;
+            "
+          ></a>
+
+          <a
+            id="d-eg-treppenhaus_rechts"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.55%;
+              left: 90.32%;
+              width: 1.26%;
+              height: 6.88%;
+            "
+          ></a>
+
+          <a
+            id="d-eg-gang_rechts"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.43%;
+              left: 90.4%;
+              width: 1.14%;
+              height: 18.57%;
+            "
+          ></a>
+
+          <a
+            id="d-eg-gang_mitte"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 32.08%;
+              left: 80.79%;
+              width: 10.74%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            id="d-eg-treppenhaus_links"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.94%;
+              left: 80.73%;
+              width: 1.02%;
+              height: 6.62%;
+            "
+          ></a>
+
+          <a
+            id="d-eg-gang_links"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.56%;
+              left: 80.67%;
+              width: 1.26%;
+              height: 10.32%;
+            "
+          ></a>
+
+          <a
+            id="innenhof-d"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.68%;
+              left: 85.35%;
+              width: 4.74%;
+              height: 16.36%;
+            "
+          ></a>
+
+          <a
+            id="hof-c_d"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 10.91%;
+              left: 70.71%;
+              width: 5.22%;
+              height: 28.57%;
+            "
+          ></a>
+
+          <a
+            id="straße-nord-1"
+            class="highlight-link straße"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 0.39%;
+              left: 9.18%;
+              width: 35.83%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            id="straße-nord-2"
+            class="highlight-link straße"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 0.32%;
+              left: 45.08%;
+              width: 25.93%;
+              height: 5.32%;
+            "
+          ></a>
+
+          <a
+            id="straße-nord-3"
+            class="highlight-link straße"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 0.65%;
+              left: 71.07%;
+              width: 29.23%;
+              height: 5.19%;
+            "
+          ></a>
+
+          <a
+            id="hof-b_c"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.16%;
+              left: 45.2%;
+              width: 4.86%;
+              height: 25.71%;
+            "
+          ></a>
+
+          <a
+            id="b-eg-c-eg-treppenhaus_links"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.94%;
+              left: 28.57%;
+              width: 1.32%;
+              height: 6.23%;
+            "
+          ></a>
+
+          <a
+            id="b-eg-gang_links"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.43%;
+              left: 28.69%;
+              width: 1.14%;
+              height: 14.68%;
+            "
+          ></a>
+
+          <a
+            id="b-eg-gang_mitte"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.51%;
+              left: 24.13%;
+              width: 17.05%;
+              height: 2.6%;
+            "
+          ></a>
+
+          <a
+            id="b-eg-tuer_links"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 36.1%;
+              left: 24.13%;
+              width: 1.32%;
+              height: 5.71%;
+            "
+          ></a>
+
+          <a
+            id="b-eg-pausenhalle"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 36.75%;
+              left: 36.07%;
+              width: 4.98%;
+              height: 5.58%;
+            "
+          ></a>
+
+          <a
+            id="hof-a"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 53.9%;
+              left: 11.34%;
+              width: 3.6%;
+              height: 18.05%;
+            "
+          ></a>
+
+          <a
+            id="innenhof-b"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.81%;
+              left: 33.13%;
+              width: 5.04%;
+              height: 18.18%;
+            "
+          ></a>
+
+          <a
+            id="hof-a_b"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 9.35%;
+              left: 16.93%;
+              width: 8.58%;
+              height: 18.57%;
+            "
+          ></a>
+
+          <a
+            id="weg-b"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 9.22%;
+              left: 25.63%;
+              width: 19.57%;
+              height: 5.45%;
+            "
+          ></a>
+
+          <a
+            id="weg-c"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 10.13%;
+              left: 49.4%;
+              width: 21.07%;
+              height: 3.9%;
+            "
+          ></a>
+
+          <a
+            id="weg-d"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 10.65%;
+              left: 75.99%;
+              width: 20.23%;
+              height: 3.77%;
+            "
+          ></a>
+
+          <a
+            id="hof-rampe"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 82.34%;
+              left: 36.07%;
+              width: 16.39%;
+              height: 7.92%;
+            "
+          ></a>
+
+          <a
+            id="hof-ecke_a"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 82.34%;
+              left: 17.89%;
+              width: 2.94%;
+              height: 6.49%;
+            "
+          ></a>
+
+          <a
+            id="hof-muelltonnen"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 82.47%;
+              left: 24.79%;
+              width: 11.22%;
+              height: 7.53%;
+            "
+          ></a>
+          <a
+            id="c-eg-treppenhaus_links"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 54.81%;
+              width: 1.25%;
+              height: 5.97%;
+            "
+          ></a>
+
+          <a
+            id="c-eg-gang_links"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.3%;
+              left: 55%;
+              width: 1.13%;
+              height: 18.44%;
+            "
+          ></a>
+
+          <a
+            id="c-eg-gang_rechts"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.94%;
+              left: 64.5%;
+              width: 1.13%;
+              height: 6.23%;
+            "
+          ></a>
+
+          <a
+            id="c-eg-gang_rechts"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 64.5%;
+              width: 1.36%;
+              height: 18.83%;
+            "
+          ></a>
+
+          <a
+            id="c-eg-gang_mitte"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 32.34%;
+              left: 56%;
+              width: 8.54%;
+              height: 2.08%;
+            "
+          ></a>
+
+          <a
+            id="innenhof-c"
+            class="highlight-link hof"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.45%;
+              left: 59.72%;
+              width: 4.47%;
+              height: 16.88%;
+            "
+          ></a>
+          <a
+            id="c-eg-tuer_mitte"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 34.68%;
+              left: 59.43%;
+              width: 1.42%;
+              height: 5.32%;
+            "
+          ></a>
+
+          <a
+            id="c-eg-treppenhaus_rechts"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 61.36%;
+              width: 2.83%;
+              height: 1.82%;
+            "
+          ></a>
+          <a
+            id="b-eg-bad"
+            class="highlight-link b"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 23.12%;
+              left: 39%;
+              width: 2.21%;
+              height: 5.32%;
+            "
+          ></a>
+
+          <a
+            id="c-eg-bad"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 56.17%;
+              width: 2.43%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            id="f-eg-bad"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 82.6%;
+              left: 53.96%;
+              width: 1.7%;
+              height: 7.4%;
+            "
+          ></a>
+
+          <a
+            id="d-eg-tuer_links"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 34.68%;
+              left: 81%;
+              width: 1.02%;
+              height: 4.94%;
+            "
+          ></a>
+
+          <a
+            id="d-eg-tuer_mitte"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 85.31%;
+              width: 1.47%;
+              height: 4.81%;
+            "
+          ></a>
+
+          <a
+            id="d-eg-treppenhaus_mitte"
+            class="highlight-link d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.79%;
+              left: 87.05%;
+              width: 2.83%;
+              height: 1.82%;
+            "
+          ></a>
+        </div>
+      </div>
+
+      <div
+        class="grundriss"
+        id="img2"
+        style="position: relative; height: auto; display: none"
+      >
+        <div class="inner">
+          <img
+            id="2"
+            src="https://www.t-auer.com/2.jpg"
+            alt="Grundriss"
+            style="width: 100%; border: solid 2px yellow"
+          />
+          <a
+            id="f-og1-treppenhaus"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 79.26%;
+              left: 92.08%;
+              width: 3.12%;
+              height: 2.34%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="c-og1-bad"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 56.17%;
+              width: 2.43%;
+              height: 4.68%;
+            "
+          ></a>
+          <a
+            class="highlight-link f"
+            id="f-og1-flur"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 79.1%;
+              left: 53.78%;
+              width: 38.3%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link hof"
+            id="bruecke-og1-c_f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 41.8%;
+              left: 55.04%;
+              width: 0.96%;
+              height: 37.27%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link g"
+            id="g-og1-kleiner_gang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 66.92%;
+              left: 52.7%;
+              width: 2.28%;
+              height: 1.04%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link g"
+            id="g-og1-kleiner_gang2"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 65.19%;
+              left: 52.76%;
+              width: 0.9%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link g"
+            id="g-og1-flur"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 62.21%;
+              left: 41%;
+              width: 12.55%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link g"
+            id="g-og1-treppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 66.62%;
+              left: 39.38%;
+              width: 1.62%;
+              height: 7.14%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link hof"
+            id="bruecke-og1-b_g"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 36.49%;
+              left: 39.44%;
+              width: 1.44%;
+              height: 30.26%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og1-treppen"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 28.96%;
+              left: 39.14%;
+              width: 2.04%;
+              height: 7.4%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og1-bad"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 23.38%;
+              left: 38.9%;
+              width: 2.34%;
+              height: 5.19%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og1-flur_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 23.38%;
+              left: 38.42%;
+              width: 0.6%;
+              height: 10%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og1-flur"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.38%;
+              left: 23.53%;
+              width: 15.55%;
+              height: 2.99%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og1-a_b_uebergang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 17.59%;
+              width: 6%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og1-treppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.81%;
+              left: 28.69%;
+              width: 1.02%;
+              height: 6.36%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og1-flur_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 28.63%;
+              width: 1.08%;
+              height: 8.83%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og1-aufenthalt_bereich"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 30.26%;
+              left: 28.63%;
+              width: 4.08%;
+              height: 2.86%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og1-unter_der_uhr"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.51%;
+              left: 14.17%;
+              width: 3.3%;
+              height: 7.66%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og1-kleine_treppe"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 41.17%;
+              left: 13.99%;
+              width: 1.14%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og1-gang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 41.17%;
+              left: 15.19%;
+              width: 1.02%;
+              height: 27.14%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og1-trppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 68.18%;
+              left: 15.13%;
+              width: 1.2%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og1-treppe_raus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 12.12%;
+              width: 1.98%;
+              height: 5.06%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og1-schleuse"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 11.04%;
+              width: 0.78%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og1-aufzug_ausgang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 30.65%;
+              left: 24.01%;
+              width: 1.44%;
+              height: 2.86%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og1-treppenhaus_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.32%;
+              left: 54.92%;
+              width: 1.02%;
+              height: 5.84%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og1-flur_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 55.16%;
+              width: 0.84%;
+              height: 16.36%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og1-gang_mitte"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 32.73%;
+              left: 56.12%;
+              width: 9.36%;
+              height: 1.95%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og1-aufentshalt_bereich"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 59.12%;
+              width: 6.48%;
+              height: 2.6%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og1-treppe"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 60.68%;
+              width: 4.8%;
+              height: 2.08%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og1-treppen_ausgang_links"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.4%;
+              left: 59%;
+              width: 1.68%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link hof"
+            id="c-og1-gang_c_d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 40.13%;
+              left: 53.72%;
+              width: 38.06%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-treppe"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 38.05%;
+              left: 86.73%;
+              width: 4.8%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-treppen_ausgang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.79%;
+              left: 85.23%;
+              width: 1.5%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-bad"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 35.06%;
+              left: 81.69%;
+              width: 3.3%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-gang_links"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.3%;
+              left: 80.61%;
+              width: 1.08%;
+              height: 18.44%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-treppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 80.61%;
+              width: 1.14%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-medio_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.43%;
+              left: 90.7%;
+              width: 4.56%;
+              height: 9.35%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-medio_oben_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.06%;
+              left: 91.84%;
+              width: 3.42%;
+              height: 6.36%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-medio_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 30.91%;
+              left: 90.64%;
+              width: 1.92%;
+              height: 5.84%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-medio_mitte"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 32.86%;
+              left: 85.05%;
+              width: 5.58%;
+              height: 3.9%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-medio_links_unten"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 32.6%;
+              left: 81.81%;
+              width: 3.24%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-links"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 22.73%;
+              left: 81.81%;
+              width: 3.18%;
+              height: 10%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-links_oben"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 81.81%;
+              width: 3.24%;
+              height: 7.53%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og1-gang_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.56%;
+              left: 64.41%;
+              width: 1.08%;
+              height: 11.04%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og1-treppenhaus_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 64.53%;
+              width: 1.2%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og1-ecke_links"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 55.1%;
+              width: 0.84%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link g"
+            id="g-og1-sekreteriat"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 61.04%;
+              left: 34.93%;
+              width: 4.38%;
+              height: 4.94%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og1-aufzug_ausgang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 30.65%;
+              left: 21.91%;
+              width: 1.02%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og1-ecke"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 76.53%;
+              left: 76.95%;
+              width: 2.22%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og1-ecke"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 42.47%;
+              left: 77.91%;
+              width: 1.26%;
+              height: 6.75%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link hof"
+            id="bruecke-og1-d_f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 42.47%;
+              left: 77.01%;
+              width: 0.9%;
+              height: 35.19%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og1-unter_der_treppe"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 81.6%;
+              left: 87.88%;
+              width: 1.14%;
+              height: 1.82%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og1-treppe_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 83.07%;
+              width: 4.8%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og1-rechts_von_treppe_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 63.75%;
+              width: 1.44%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og1-treppe_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 59.24%;
+              width: 4.5%;
+              height: 1.69%;
+            "
+          ></a>
+        </div>
+      </div>
+
+      <div
+        class="grundriss"
+        id="img3"
+        style="position: relative; height: auto; display: none"
+      >
+        <div class="inner">
+          <img
+            id="3"
+            src="https://www.t-auer.com/3.jpg"
+            alt="Grundriss"
+            style="width: 100%; border: solid 2px yellow"
+          />
+          <a
+            id="f-og2-treppenhaus"
+            class="highlight-link f"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 79.26%;
+              left: 92.08%;
+              width: 3.12%;
+              height: 2.34%;
+            "
+          ></a>
+          <a
+            onclick="clicked(this.id)"
+            id="c-og2-bad"
+            class="highlight-link c"
+            style="
+              position: absolute;
+              background-color: rgba(123, 255, 0, 0.3);
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 56.17%;
+              width: 2.43%;
+              height: 4.68%;
+            "
+          ></a>
+          <a
+            class="highlight-link f"
+            id="f-og2-flur"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 79.1%;
+              left: 54.78%;
+              width: 38.3%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link g"
+            id="g-og2-flur"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 62.21%;
+              left: 41%;
+              width: 12.55%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link g"
+            id="g-og2-treppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 66.62%;
+              left: 39.38%;
+              width: 1.62%;
+              height: 7.14%;
+            "
+          ></a>
+          <a
+            class="highlight-link b"
+            id="b-og2-treppen"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 28.96%;
+              left: 39.14%;
+              width: 2.04%;
+              height: 7.4%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og2-bad"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 23.38%;
+              left: 38.9%;
+              width: 2.34%;
+              height: 5.19%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og2-flur_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 23.38%;
+              left: 38.42%;
+              width: 0.6%;
+              height: 10%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og2-flur"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.38%;
+              left: 23.53%;
+              width: 15.55%;
+              height: 2.99%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og2-a_b_uebergang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 33.64%;
+              left: 17.59%;
+              width: 6%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og2-treppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 14.81%;
+              left: 28.69%;
+              width: 1.02%;
+              height: 6.36%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og2-flur_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 28.63%;
+              width: 1.08%;
+              height: 8.83%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og2-aufenthalt_bereich"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 30.26%;
+              left: 28.63%;
+              width: 4.08%;
+              height: 2.86%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og2-gang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 41.17%;
+              left: 15.19%;
+              width: 1.02%;
+              height: 27.14%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og2-trppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 68.18%;
+              left: 15.13%;
+              width: 1.2%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link b"
+            id="b-og2-aufzug_ausgang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 30.65%;
+              left: 24.01%;
+              width: 1.44%;
+              height: 2.86%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og2-treppenhaus_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.32%;
+              left: 54.92%;
+              width: 1.02%;
+              height: 5.84%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og2-flur_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 55.16%;
+              width: 0.84%;
+              height: 16.36%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og2-gang_mitte"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 32.73%;
+              left: 56.12%;
+              width: 9.36%;
+              height: 1.95%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og2-aufentshalt_bereich"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 34.94%;
+              left: 59.12%;
+              width: 6.48%;
+              height: 2.6%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og2-treppe"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 60.68%;
+              width: 4.8%;
+              height: 2.08%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og2-treppen_ausgang_links"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.4%;
+              left: 59%;
+              width: 1.68%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link hof"
+            id="c-og2-gang_c_d"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 40.13%;
+              left: 53.72%;
+              width: 38.06%;
+              height: 2.47%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-treppe"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 38.05%;
+              left: 86.73%;
+              width: 4.8%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-treppen_ausgang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.79%;
+              left: 85.23%;
+              width: 1.5%;
+              height: 2.21%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-bad"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 35.06%;
+              left: 81.69%;
+              width: 3.3%;
+              height: 4.68%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-gang_links"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.3%;
+              left: 80.61%;
+              width: 1.08%;
+              height: 18.44%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-treppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 80.61%;
+              width: 1.14%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-medio_mitte"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 32.86%;
+              left: 85.05%;
+              width: 5.58%;
+              height: 3.9%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-medio_links_unten"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 32.6%;
+              left: 81.81%;
+              width: 3.24%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-links"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 22.73%;
+              left: 81.81%;
+              width: 3.18%;
+              height: 10%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-links_oben"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 81.81%;
+              width: 3.24%;
+              height: 7.53%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og2-gang_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.56%;
+              left: 64.41%;
+              width: 1.08%;
+              height: 11.04%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og2-treppenhaus_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.19%;
+              left: 64.53%;
+              width: 1.2%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link c"
+            id="c-og2-ecke_links"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 37.66%;
+              left: 55.1%;
+              width: 0.84%;
+              height: 2.34%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link g"
+            id="g-og2-sekreteriat"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 61.04%;
+              left: 34.93%;
+              width: 4.38%;
+              height: 4.94%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og2-aufzug_ausgang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 30.65%;
+              left: 21.91%;
+              width: 1.02%;
+              height: 2.73%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og2-unter_der_treppe"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 81.6%;
+              left: 87.88%;
+              width: 1.14%;
+              height: 1.82%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og2-treppe_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 83.07%;
+              width: 4.8%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og2-rechts_von_treppe_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 63.75%;
+              width: 1.44%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og2-treppe_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 81.73%;
+              left: 59.24%;
+              width: 4.5%;
+              height: 1.69%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-treppenhaus_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 15.06%;
+              left: 90.76%;
+              width: 0.96%;
+              height: 6.1%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link d"
+            id="d-og2-gang_rechts"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 21.17%;
+              left: 90.58%;
+              width: 1.14%;
+              height: 16.62%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og2-treppenhaus"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 28.05%;
+              left: 15.37%;
+              width: 2.16%;
+              height: 12.86%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link a"
+            id="a-og2-oberstufencafeteria"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 30.91%;
+              left: 11.04%;
+              width: 4.02%;
+              height: 12.86%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link f"
+            id="f-og2-bad"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 84.06%;
+              left: 86.07%;
+              width: 2.94%;
+              height: 3.64%;
+            "
+          ></a>
+
+          <a
+            class="highlight-link g"
+            id="g-og2-gang"
+            style="
+              position: absolute;
+              transition: background-color 0.3s ease;
+              top: 55.58%;
+              left: 39.44%;
+              width: 1.62%;
+              height: 11.3%;
+            "
+          ></a>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button
+          id="up"
+          onclick="changeImage(1)"
+          style="width: 50px; height: 50px; font-size: 24px"
+        >
+          ⬆️
+        </button>
+
+        <button
+          id="down"
+          onclick="changeImage(-1)"
+          style="width: 50px; height: 50px; font-size: 24px"
+        >
+          ⬇️
+        </button>
+      </div>
+    </div>
+
+    <div>
+      Die am häufigsten markierten Bereiche:
+      <ol>
+        {% for keyValuePair in placeList %}
+        <li>{{ keyValuePair[0] }}: {{ keyValuePair[1] }}</li>
+        {% endfor %}
+      </ol>
+      <br>
+
+     <strong>{{ votes }}</strong> Schüler haben abgestimmt
+      <br>
+      Dadurch wurden <strong>{{ votesTotal }}</strong> Bereiche markiert
+      <br>
+      
+      Jeder Schüler ist mit durschnittlich <strong>{{ (votesTotal/votes)|round(2) }}</strong> Bereichen unzufrieden!
+      <br>
+      Die größte Anzahl von Bereichen, die von einem einzelnen Schüler markiert worden ist: <strong>{{ maxCount }}</strong>
+    </div>
+    <script>
+      const container = document.querySelector(".container");
+      container.style.display = "flex"; // Show the container when JavaScript is enabled
+
+      let currentIndex = 1; // Start with image 1.jpg
+
+      const img0 = document.getElementById("img0");
+      const img1 = document.getElementById("img1");
+      const img2 = document.getElementById("img2");
+      const img3 = document.getElementById("img3");
+      const upButton = document.getElementById("up");
+      const downButton = document.getElementById("down");
+
+      function changeImage(direction) {
+        currentIndex += direction;
+
+        if (currentIndex <= 0) {
+          downButton.disabled = true;
+        } else {
+          downButton.disabled = false;
+        }
+        if (currentIndex >= 3) {
+          upButton.disabled = true;
+        } else {
+          upButton.disabled = false;
+        }
+
+        imgs = [img0, img1, img2, img3];
+        imgs.forEach((img) => {
+          img.style.display = "none";
+        });
+        document.getElementById("img" + currentIndex).style.display = "flex";
+      }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <script>
+      function addColor() {
+        const links = document.querySelectorAll(".highlight-link");
+        links.forEach((link) => {
+          link.style.backgroundColor = "rgba(0, 255, 0, 0.1)";
+        });
+      }
+      addColor();
+      const dataString = "{{data | safe}}";
+      const jsonString = dataString
+        .replace(/\(/g, "[")
+        .replace(/\)/g, "]")
+        .replace(/'/g, '"');
+
+      const data = JSON.parse(jsonString);
+
+      const parsedData = data.reduce((acc, [key, value]) => {
+        acc[key] = value;
+        return acc;
+      }, {});
+
+      console.log(parsedData);
+
+      Object.entries(parsedData).forEach(([key, value]) => {
+        document.getElementById(key).style.backgroundColor = `rgba(${
+          (value / 35) * 255
+        }, ${255 - (value / 35) * 255}, 0,0.5)`;
+      });
+
+      const dataArray = Object.entries(parsedData).map(([key, value]) => ({
+        Ort: key,
+        Anzahl: value,
+      }));
+
+      const worksheet = XLSX.utils.json_to_sheet(dataArray);
+      const workbook = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+      function downloadWorkbook() {
+        XLSX.writeFile(workbook, "data.xlsx");
+      }
+
+      // Export the workbook to a file
+    </script>
+  </body>
+</html>
