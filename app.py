@@ -1,8 +1,5 @@
-
-import os
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
-import math
 import Logger
 import db_connect
 app = Flask(__name__)
